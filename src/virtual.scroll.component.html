@@ -1,0 +1,12 @@
+﻿<div #container class="scrol-container">
+    <div class="spacer" [style.height]="spacerHeight + 'px'"></div>
+    <div #virtualContainer class="virtual-container"
+         [style.transform]="'translateY(' + topPadding + 'px)'"
+         [style.webkitTransform]="'translateY(' + topPadding + 'px)'">
+        <div *ngFor="let item of range">
+            <ng-template [ngTemplateOutlet]="itemTemplate"
+                         [ngOutletContext]="{ item: item }">
+            </ng-template>
+        </div>
+    </div>
+</div>
